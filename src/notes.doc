@@ -1,0 +1,74 @@
+import './App.css';
+
+import React, {useState} from 'react';
+
+export default function CityTemp() {
+  let [city, setCity] = useState('');
+
+  function updateCity(event) {
+    setCity(event.target.value);
+  }
+  const answers = {__html: `The temperature in ${city} is 100 degrees.`};
+
+  function Results() {
+    return (<div dangerouslySetInnerHTML = {answers}/>;
+  }
+
+  function Clicked(event) {
+    if (city !== "") {
+      return (Results);
+  }
+  else {
+    alert('Please enter a city.');
+    event.preventDefault();
+  }
+}
+
+  return (
+    <form id='searching' onSubmit={Clicked}>
+    
+        <div className='answer'/>
+        
+      <div>
+        <input
+  type = 'text'
+  className = 'city'
+  autoComplete = 'off'
+  placeholder = 'Enter City'
+  onChange = {updateCity}/>
+</div>
+
+      <div>
+      <input type = 'submit' id = 'submit' className = 'btn'/>
+      </div>
+      
+      </form>
+  );
+
+---------
+import React, { useState } from "react";
+import axios from "axios";
+
+export default function Temperature(props) {
+  let [temperature, setTemperature] = useState(null);
+
+  function shareTemperature(response) {
+    setTemperature(response.data.main.temp);
+  }
+
+  let url = `https://api.openweathermap.org/data/2.5/weather?q=${props.city}&appid=f9de746b9d23a9c915974277fc1710ae&units=metric`;
+  axios.get(url).then(shareTemperature);
+
+  if (temperature) {
+    return (
+      <div>
+        <p>
+          The temperature in {props.city} is currently {Math.round(temperature)}{" "}
+          degrees Celsius.
+        </p>
+      </div>
+    );
+  } else {
+    return <p>Loading...</p>;
+  }
+}

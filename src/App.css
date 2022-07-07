@@ -1,0 +1,29 @@
+.App {
+  margin: 10px;
+  text-align: center;
+}
+
+.city {
+  border-radius: 50px;
+  margin: 5px;
+  background-color: coral;
+  border-style: none;
+  color: black;
+  font-size: 24px;
+  text-align: center;
+  border: none;
+  padding: 3px;
+}
+
+.btn {
+  border-radius: 50px;
+  margin: 5px;
+  font-size: 20px;
+  background-color: orange;
+  border-style: none;
+  color: black;
+}
+
+.answer {
+  border-style: none;
+}

@@ -1,0 +1,31 @@
+{
+  "name": "week3hwv2",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "main": "src/index.js",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "bootstrap": "4.0.0",
+    "react": "^17.0.0",
+    "react-bootstrap": "2.0.0",
+    "react-dom": "^17.0.0",
+    "react-scripts": "3.4.1"
+  },
+  "devDependencies": {
+    "typescript": "3.3.3"
+  },
+  "scripts": {
+    "install": "react-bootstrap install",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "stop": "nginx.exe -g"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
+}
